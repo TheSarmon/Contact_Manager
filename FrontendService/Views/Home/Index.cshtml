@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Contacts";
+}
+
+<div class="container mt-5">
+    <!-- Змінив для кращого відступу та центрування -->
+    <h1 class="mb-4">Contacts</h1>
+
+    <!-- Поле пошуку -->
+    <div class="mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="Search by Name"> <!-- Оновлено поле пошуку -->
+    </div>
+
+    <!-- Форма для завантаження файлу -->
+    <form enctype="multipart/form-data" method="post" class="mb-3 d-flex">
+        <!-- Додано відступи для стилю -->
+        <input type="file" id="fileInput" name="file" accept=".csv" class="form-control me-2" /> <!-- Оновлено класи для більшого поля -->
+        <button type="button" id="uploadButton" class="btn btn-outline-primary">Upload</button> <!-- Кнопка з новим стилем -->
+    </form>
+
+    <!-- Таблиця контактів -->
+    <table id="contactsTable" class="table table-striped table-bordered">
+        <!-- Змінив стилі таблиці для кращого вигляду -->
+        <thead class="table-dark">
+            <!-- Додано темну тему для заголовку таблиці -->
+            <tr>
+                <th id="nameHeader" class="sortable">Name</th>
+                <th id="dobHeader" class="sortable">Date</th>
+                <th id="marriedHeader" class="sortable">Married</th>
+                <th id="phoneHeader" class="sortable">Phone</th>
+                <th id="salaryHeader" class="sortable">Salary</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="contactsBody">
+            @* <script type="module" src="~/js/main.js"></script> *@
+            <script type="module" src="~/js/script.js"></script> <!-- Скрипт завантаження контактів -->
+            <!-- Контакти будуть завантажені через JS -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Підключення стилів CSS -->
+<link rel="stylesheet" href="~/css/styles.css"> <!-- Оновлення для підключення нового CSS -->
