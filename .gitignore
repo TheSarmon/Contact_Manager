@@ -28,9 +28,6 @@ yarn-error.log
 !.vscode/launch.json
 !.vscode/extensions.json
 
-#Visual Studio
-.vs/*
-
 # Rider
 .idea/
 
