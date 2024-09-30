@@ -3,16 +3,30 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35111.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploadService", "FileUploadService\FileUploadService.csproj", "{500A99DC-9691-46E0-BAEA-20DBC0136536}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontendService", "FrontendService\FrontendService.csproj", "{559BB017-16E1-4791-8F0C-2125300394B1}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService", "DataService\DataService.csproj", "{11BADEA3-B71A-471B-B78F-4239A844B986}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E7E3451A-9AB9-4B90-B9F5-2B21FAA891F9}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{F4D27F37-22FC-4910-9076-981AA0ED778D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataService", "DataService", "{401349CB-C0E5-400F-A2DC-31E4715A1F49}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService.Application", "DataService.Application\DataService.Application.csproj", "{34DAB377-0A1C-43E5-8ABC-545104D408CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService.DataAccess", "DataService.DataAccess\DataService.DataAccess.csproj", "{5A4CFDC8-9D06-492F-9599-EDEAD7182955}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService.Domain", "DataService.Domain\DataService.Domain.csproj", "{0126827B-4E5F-4B48-83B1-5D82DBD651B7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataService.API", "DataService.API\DataService.API.csproj", "{EAD1D8ED-5452-45F5-9F8B-F07A42981291}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploadService.Application", "FileUploadService.Application\FileUploadService.Application.csproj", "{B0A57719-19A5-4C3F-A698-47B97F4C049F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FileUploadService", "FileUploadService", "{83DC1C04-1D87-4318-A5B1-4CDFA2A91396}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUploadService.API", "FileUploadService.API\FileUploadService.API.csproj", "{AF398667-FBFE-4C08-BFAC-CA170D058163}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,21 +34,45 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{500A99DC-9691-46E0-BAEA-20DBC0136536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{500A99DC-9691-46E0-BAEA-20DBC0136536}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{500A99DC-9691-46E0-BAEA-20DBC0136536}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{500A99DC-9691-46E0-BAEA-20DBC0136536}.Release|Any CPU.Build.0 = Release|Any CPU
 		{559BB017-16E1-4791-8F0C-2125300394B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{559BB017-16E1-4791-8F0C-2125300394B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{559BB017-16E1-4791-8F0C-2125300394B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{559BB017-16E1-4791-8F0C-2125300394B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{11BADEA3-B71A-471B-B78F-4239A844B986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{11BADEA3-B71A-471B-B78F-4239A844B986}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{11BADEA3-B71A-471B-B78F-4239A844B986}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{11BADEA3-B71A-471B-B78F-4239A844B986}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34DAB377-0A1C-43E5-8ABC-545104D408CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34DAB377-0A1C-43E5-8ABC-545104D408CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34DAB377-0A1C-43E5-8ABC-545104D408CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34DAB377-0A1C-43E5-8ABC-545104D408CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A4CFDC8-9D06-492F-9599-EDEAD7182955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A4CFDC8-9D06-492F-9599-EDEAD7182955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A4CFDC8-9D06-492F-9599-EDEAD7182955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A4CFDC8-9D06-492F-9599-EDEAD7182955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0126827B-4E5F-4B48-83B1-5D82DBD651B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0126827B-4E5F-4B48-83B1-5D82DBD651B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0126827B-4E5F-4B48-83B1-5D82DBD651B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0126827B-4E5F-4B48-83B1-5D82DBD651B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAD1D8ED-5452-45F5-9F8B-F07A42981291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD1D8ED-5452-45F5-9F8B-F07A42981291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD1D8ED-5452-45F5-9F8B-F07A42981291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD1D8ED-5452-45F5-9F8B-F07A42981291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0A57719-19A5-4C3F-A698-47B97F4C049F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0A57719-19A5-4C3F-A698-47B97F4C049F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0A57719-19A5-4C3F-A698-47B97F4C049F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0A57719-19A5-4C3F-A698-47B97F4C049F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF398667-FBFE-4C08-BFAC-CA170D058163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF398667-FBFE-4C08-BFAC-CA170D058163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF398667-FBFE-4C08-BFAC-CA170D058163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF398667-FBFE-4C08-BFAC-CA170D058163}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{401349CB-C0E5-400F-A2DC-31E4715A1F49} = {F4D27F37-22FC-4910-9076-981AA0ED778D}
+		{34DAB377-0A1C-43E5-8ABC-545104D408CD} = {401349CB-C0E5-400F-A2DC-31E4715A1F49}
+		{5A4CFDC8-9D06-492F-9599-EDEAD7182955} = {401349CB-C0E5-400F-A2DC-31E4715A1F49}
+		{0126827B-4E5F-4B48-83B1-5D82DBD651B7} = {401349CB-C0E5-400F-A2DC-31E4715A1F49}
+		{B0A57719-19A5-4C3F-A698-47B97F4C049F} = {83DC1C04-1D87-4318-A5B1-4CDFA2A91396}
+		{83DC1C04-1D87-4318-A5B1-4CDFA2A91396} = {F4D27F37-22FC-4910-9076-981AA0ED778D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F063CA1B-5955-452F-B5EE-2EEAE8146C11}

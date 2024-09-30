@@ -9,12 +9,11 @@
     const salaryHeader = document.getElementById('salaryHeader');
     let isAsc = { name: true, dob: true, married: true, phone: true, salary: true };
 
-    // Завантаження контактів з DataService
     fetch('http://localhost:5001/api/contacts')
         .then(response => response.json())
         .then(data => {
             const tbody = document.getElementById('contactsBody');
-            tbody.innerHTML = ''; // Очищуємо старі дані
+            tbody.innerHTML = '';
             data.forEach(contact => {
                 const row = document.createElement('tr');
                 row.setAttribute('data-id', contact.id);
@@ -36,12 +35,11 @@
     function formatDate(dateString) {
         const date = new Date(dateString);
         const year = date.getFullYear();
-        const month = String(date.getMonth() + 1).padStart(2, '0'); // додаємо 1, оскільки місяці починаються з 0
+        const month = String(date.getMonth() + 1).padStart(2, '0');
         const day = String(date.getDate()).padStart(2, '0');
-        return `${year}-${month}-${day}`; // Повертаємо формат yyyy-mm-dd
+        return `${year}-${month}-${day}`;
     }
 
-    // Функція завантаження CSV-файлу
     uploadButton.addEventListener('click', () => {
         const file = fileInput.files[0];
         if (!file) {
@@ -69,7 +67,6 @@
             });
     });
 
-    // Сортування колонок таблиці
     nameHeader.addEventListener('click', function () {
         clearSortIndicators();
         sortTable(1, 'text', isAsc.name);
@@ -139,7 +136,6 @@
         header.innerHTML = header.textContent.split(' ')[0] + arrow;
     }
 
-    // Пошук по імені
     searchInput.addEventListener('input', function () {
         const filter = searchInput.value.toLowerCase();
         const rows = document.querySelectorAll('#contactsBody tr');
@@ -150,7 +146,6 @@
         });
     });
 
-    // Видалення та редагування контактів
     document.querySelector('table').addEventListener('click', function (event) {
         if (event.target.classList.contains('edit-btn')) {
             handleEdit(event.target);
@@ -170,7 +165,7 @@
 
                 switch (index) {
                     case 1: // Date of Birth
-                        input.type = 'date'; // Поле дати, використовує стандартний формат yyyy-mm-dd
+                        input.type = 'date';
                         input.value = cell.textContent.trim();
                         break;
                     case 2: // Married
@@ -208,7 +203,7 @@
         var contact = {
             Id: parseInt(row.dataset.id),
             Name: row.querySelector('td:nth-child(1) input').value,
-            DateOfBirth: row.querySelector('td:nth-child(2) input').value, // Дата у форматі yyyy-mm-dd
+            DateOfBirth: row.querySelector('td:nth-child(2) input').value,
             Married: row.querySelector('td:nth-child(3) input').checked,
             Phone: row.querySelector('td:nth-child(4) input').value,
             Salary: parseFloat(row.querySelector('td:nth-child(5) input').value)
@@ -256,7 +251,7 @@
             if (index < 5) {
                 const values = [
                     contact.Name,
-                    contact.DateOfBirth, // Дата у форматі yyyy-mm-dd
+                    contact.DateOfBirth,
                     contact.Married ? '✅' : '❌',
                     contact.Phone,
                     contact.Salary.toFixed(2)
