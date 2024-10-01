@@ -25,19 +25,19 @@ namespace DataService.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddContact([FromBody] Contact contactDto)
+        public async Task<IActionResult> AddContact([FromBody] Contact contact)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            if (contactDto == null)
+            if (contact == null)
             {
                 return BadRequest("Invalid contact data.");
             }
 
-            await _mediator.Send(new AddContactCommand(contactDto));
+            await _mediator.Send(new AddContactCommand(contact));
             return Ok("Contact added successfully.");
         }
 
@@ -62,7 +62,7 @@ namespace DataService.Controllers
             }
 
             var result = await _mediator.Send(new UpdateContactCommand(id, contact));
-            if (result.Equals(false))// ЗВЕРНУТИ УВАГУ
+            if (result.Equals(false))
             {
                 return NotFound("Contact not found.");
             }

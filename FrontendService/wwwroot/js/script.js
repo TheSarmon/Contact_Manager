@@ -20,7 +20,7 @@
 
                 row.innerHTML = `
                     <td>${contact.name}</td>
-                    <td>${formatDate(contact.dateOfBirth)}</td> <!-- Дата у форматі yyyy-mm-dd -->
+                    <td>${formatDate(contact.dateOfBirth)}</td>
                     <td>${contact.married ? '✅' : '❌'}</td>
                     <td>${contact.phone}</td>
                     <td>${contact.salary}</td>

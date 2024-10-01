@@ -1,15 +1,16 @@
 ﻿using AutoMapper;
 using DataService.Domain;
 using DataService.Repositories;
+using System.Diagnostics.Contracts;
 
 namespace DataService.Services
 {
     public interface IContactService
     {
         Task<List<Contact>> GetContacts();
-        Task AddContact(Contact contactDto);
+        Task AddContact(Contact contact);
         Task AddContactsBulk(List<Contact> contacts);
-        Task<bool> UpdateContact(int id, Contact contactDto);
+        Task<bool> UpdateContact(int id, Contact contact);
         Task<bool> DeleteContact(int id);
     }
 
@@ -30,27 +31,27 @@ namespace DataService.Services
             return _mapper.Map<List<Contact>>(contacts);
         }
 
-        public async Task AddContact(Contact contactDto)
+        public async Task AddContact(Contact contact)
         {
-            var contact = _mapper.Map<Contact>(contactDto);
-            await _contactRepository.AddContact(contact);
+            var newContact = _mapper.Map<Contact>(contact);
+            await _contactRepository.AddContact(newContact);
         }
 
-        public async Task AddContactsBulk(List<Contact> contactsDto)
+        public async Task AddContactsBulk(List<Contact> contacts)
         {
-            var contacts = _mapper.Map<List<Contact>>(contactsDto);
-            await _contactRepository.AddContactsBulk(contacts);
+            var newContacts = _mapper.Map<List<Contact>>(contacts);
+            await _contactRepository.AddContactsBulk(newContacts);
         }
 
-        public async Task<bool> UpdateContact(int id, Contact contactDto)
+        public async Task<bool> UpdateContact(int id, Contact contact)
         {
-            var contact = await _contactRepository.GetContactById(id);
-            if (contact == null)
+            var newContact = await _contactRepository.GetContactById(id);
+            if (newContact == null)
             {
                 return false;
             }
 
-            _mapper.Map(contactDto, contact);
+            _mapper.Map(newContact, contact);
             await _contactRepository.UpdateContact(contact);
             return true;
         }
